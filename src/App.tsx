@@ -1,5 +1,5 @@
-import "./global.css";
+import './global.css'
 
 export function App() {
-  return <h1>Pizza Shop</h1>;
+  return <h1>Pizza Shop</h1>
 }
