@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async'
 
 export function SignIn() {
   return (
@@ -6,5 +6,5 @@ export function SignIn() {
       <Helmet title="Login" />
       <p>SignIn</p>
     </>
-  );
+  )
 }
