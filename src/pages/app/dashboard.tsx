@@ -1,3 +1,10 @@
+import { Helmet } from "react-helmet-async";
+
 export function Dashboard() {
-  return <p>Dashboard</p>;
+  return (
+    <>
+      <Helmet title="Dashboard" />
+      <p>Dashboard</p>
+    </>
+  );
 }
