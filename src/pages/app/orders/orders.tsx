@@ -1,15 +1,13 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { ArrowRight, Search, X } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
+import { OrderTableFilters } from './order-table-filters'
+import { OrderTableRow } from './order-table-row'
 
 export function Orders() {
   return (
@@ -21,11 +19,7 @@ export function Orders() {
       </div>
 
       <div className="space-y-2.5">
-        <form className="flex items-center gap-2">
-          <span className="font-semibold text-sm">Filtros:</span>
-
-          <Input placeholder="Nome do cliente" className="w-[320px] h-8" />
-        </form>
+        <OrderTableFilters />
 
         <div className="border rounded-md">
           <Table>
@@ -43,45 +37,8 @@ export function Orders() {
             </TableHeader>
 
             <TableBody>
-              {Array.from({ length: 10 }).map((_, index) => {
-                return (
-                  <TableRow key={index}>
-                    <TableCell>
-                      <Button variant="outline" size="xs">
-                        <Search className="w-3 h-3" />
-                        <span className="sr-only">Detalhes do pedido</span>
-                      </Button>
-                    </TableCell>
-                    <TableCell className="font-mono font-medium text-xs">
-                      4893284092
-                    </TableCell>
-                    <TableCell className="text-muted-foreground">
-                      há 15 minutos
-                    </TableCell>
-                    <TableCell className="">
-                      <div className="flex items-center gap-2">
-                        <span className="bg-slate-400 rounded-full w-2 h-2" />
-                        <span className="font-medium text-muted-foreground">
-                          Pendente
-                        </span>
-                      </div>
-                    </TableCell>
-                    <TableCell className="font-medium">Érica Matos</TableCell>
-                    <TableCell className="font-medium">R$ 150,00</TableCell>
-                    <TableCell>
-                      <Button variant="outline" size="xs">
-                        <ArrowRight className="mr-2 w-3 h-3" />
-                        Aprovar
-                      </Button>
-                    </TableCell>
-                    <TableCell>
-                      <Button variant="ghost" size="xs">
-                        <X className="mr-2 w-3 h-3" />
-                        Cancelar
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                )
+              {Array.from({ length: 10 }).map((_, i) => {
+                return <OrderTableRow key={i} />
               })}
             </TableBody>
           </Table>
